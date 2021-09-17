@@ -5,6 +5,7 @@ export class InventoryCard extends AbstractComponent{
 
     scope : string;
     addToCartBtn : string = "text=Add to cart";
+    removeBtn : string = "text=Remove";
 
     constructor(itemName: string, page: Page){
         super(page)
@@ -12,8 +13,10 @@ export class InventoryCard extends AbstractComponent{
     }
 
     async addToCart(){
-        await this.click(this.addToCartBtn)
+        await this.click(this.addToCartBtn);
     }
 
-
+    async removeItemFromCart(){
+        await this.click(this.removeBtn);
+    }
 }

@@ -23,6 +23,7 @@ test.describe('Inventory tests',() =>{
         await app.inventoryPage.addItemToCart(item);
         expect(await app.inventoryPage.getShoppingCartCounter()).toBe("1");
         console.log("Item added to cart");
+        await app.inventoryPage.removeItemFromCart(item);
     
     });
 
@@ -39,6 +40,7 @@ test.describe('Inventory tests',() =>{
             expect(await app.inventoryPage.getShoppingCartCounter()).toBe(""+counter);
             console.log("Item added to cart");
             counter++;
+            await app.inventoryPage.removeItemFromCart(item);
         }
     
     });

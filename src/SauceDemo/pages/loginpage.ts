@@ -7,7 +7,7 @@ export class LoginPage extends AbstractPage{
     passwordfield : string = "id=password";
     loginbtn : string = "id=login-button";
 
-    constructor(page){
+    constructor(page: Page){
         super(page);
     }
 

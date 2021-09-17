@@ -24,6 +24,11 @@ export class InventoryPage extends AbstractPage{
         await this.inventoryCard.addToCart();
     }
 
+    async removeItemFromCart(item: InventoryItem){
+        this.inventoryCard = new InventoryCard(item.Name, this.page);
+        await this.inventoryCard.removeItemFromCart();
+    }
+
     async getShoppingCartCounter(){
         return await this.page.innerText(this.cartBadge);
     }
