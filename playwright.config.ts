@@ -7,7 +7,7 @@ const config: PlaywrightTestConfig = {
         headless: false,
         screenshot: "on"
     },
-    reporter : 'experimental-allure-playwright',
+    reporter : [['experimental-allure-playwright'],['line']],
 };
 
 export default config;

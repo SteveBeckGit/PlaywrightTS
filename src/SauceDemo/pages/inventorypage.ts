@@ -9,7 +9,7 @@ export class InventoryPage extends AbstractPage{
         super(page);
     }
 
-    inventoryCard : InventoryCard;
+    inventoryCard!: InventoryCard;
     inventory :string = "id=inventory_container";
     cartLink : string = "xpath=//a[@class='shopping_cart_link']"
     cartBadge : string = "xpath=//span[@class='shopping_cart_badge']";

@@ -26,13 +26,20 @@ test.describe('Inventory tests',() =>{
     
     });
 
-    test('Add another item to cart', async({page}) => {
+    test('Add two items to cart', async({page}) => {
     
-        const item = new InventoryItem({Name: "Sauce Labs Backpack"});
+        let list : string[] = ["Sauce Labs Backpack","Sauce Labs Bike Light"];
+        let counter : number = 1;
+
         const app = new Application(page);
-        await app.inventoryPage.addItemToCart(item);
-        expect(await app.inventoryPage.getShoppingCartCounter()).toBe("1");
-        console.log("Item added to cart");
+
+        for(var value of list){
+            let item = new InventoryItem({Name: value});
+            await app.inventoryPage.addItemToCart(item);
+            expect(await app.inventoryPage.getShoppingCartCounter()).toBe(""+counter);
+            console.log("Item added to cart");
+            counter++;
+        }
     
     });
 });
