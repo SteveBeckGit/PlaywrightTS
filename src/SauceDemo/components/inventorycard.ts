@@ -9,7 +9,7 @@ export class InventoryCard extends AbstractComponent{
 
     constructor(itemName: string, page: Page){
         super(page)
-        this.scope = "xpath=//div[text()='Sauce Labs Backpack']/ancestor::div[@class='inventory_item']";
+        this.scope = "xpath=//div[text()='"+itemName+"']/ancestor::div[@class='inventory_item']";
     }
 
     async addToCart(){

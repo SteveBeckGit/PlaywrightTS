@@ -22,11 +22,18 @@ export class InventoryPage extends AbstractPage{
     async addItemToCart(item : InventoryItem){
         this.inventoryCard = new InventoryCard(item.Name, this.page);
         await this.inventoryCard.addToCart();
+        console.log("Attempted to add "+item.Name+" to cart");
     }
 
     async removeItemFromCart(item: InventoryItem){
         this.inventoryCard = new InventoryCard(item.Name, this.page);
         await this.inventoryCard.removeItemFromCart();
+    }
+
+    async removeItemsFromCart(items : string[]){
+        for(var item of items){
+           await this.removeItemFromCart(new InventoryItem({Name:item}));
+        }
     }
 
     async getShoppingCartCounter(){
